@@ -1,0 +1,13 @@
+export PSEUDO_PREFIX=/usr
+export PSEUDO_LOCALSTATEDIR=/home/vmuser/pseudo
+export PSEUDO_LIBDIR=/usr/lib/pseudo/lib64
+export http_proxy=http://proxy-jf.intel.com:911
+export https_proxy=https://proxy-jf.intel.com:911
+
+if [[ -n $SSH_CONNECTION ]] ; then
+    echo "Logged in remotely from ${SSH_CLIENT%% *}"
+    if [ -x "start_ssh.sh" ]
+        then
+          ./start_ssh.sh 
+    fi
+fi
